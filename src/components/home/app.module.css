@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  font-family: "Comfortaa", cursive;
+  box-sizing: border-box;
+}
+
+h1 {
+  padding: 0;
+  margin-left: -85px;
+}
+
+.headingCon {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 30px;
+}
+
+.input {
+  height: 5vh;
+  width: 30vw;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(49, 49, 158);
+  color: white;
+  border: 1px solid transparent;
+  margin-left: 0.5vw;
+  border-radius: 15px;
+  transition: background-color 500ms;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid rgb(22, 22, 107);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  width: 100vw;
+  font-weight: 700;
+  color: grey;
+  transition: color 300ms;
+}
+
+.nav div:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.todosCon {
+  display: flex;
+  align-items: center;
+  height: 70vh;
+  padding: 2rem 0px 0px 0px;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: flex-Start;
+}
+
+.todo {
+  /* border: 2px solid blue; */
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 15px;
+  background-color: rgba(173, 172, 172, 0.425);
+  /* background-color: ; */
+  color: black;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 500ms;
+}
