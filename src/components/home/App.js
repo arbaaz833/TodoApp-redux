@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { changeVisibility } from "../../models/todos/index.js";
 import styles from "./app.module.css";
-import { auth } from "../../backend/firebaseconfig";
+import { auth, messaging } from "../../backend/firebaseconfig";
 import Todo from "../../todo.jsx";
 import { createTodo, fetchTodos } from "../../models/todos/index.js";
 import ReactLoading from "react-loading";
@@ -20,6 +20,29 @@ function App() {
 
   const visibility = currState.visibility;
   const [ip, setIp] = useState("");
+
+  useEffect(() => {
+    messaging
+      .getToken({
+        vapidKey:
+          "BKQX3quHdbA8q3Aaf5_tMmM6JBkl2X3GYZpRD6e-r70Y1Eo2puCgluh42_xF-3hebZSKNOwTRgstaHXr1MTcOlM",
+      })
+      .then((currentToken) => {
+        if (currentToken) {
+          console.log("device FCM token", currentToken);
+        } else {
+          // Show permission request UI
+          console.log(
+            "No registration token available. Request permission to generate one."
+          );
+          // ...
+        }
+      })
+      .catch((err) => {
+        console.log("An error occurred while retrieving token. ", err);
+        // ...
+      });
+  }, []);
 
   useEffect(() => {
     dispatch(fetchTodos());
