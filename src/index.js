@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { messaging } from "./backend/firebaseconfig";
 import "./index.css";
 // import App from "./components/home/App";
 import reportWebVitals from "./reportWebVitals";
@@ -28,3 +29,8 @@ if ("serviceWorker" in navigator) {
       console.log("Service worker registration failed, error:", err);
     });
 }
+
+messaging.onMessage((payload) => {
+  console.log("Message received. ", payload);
+  // ...
+});

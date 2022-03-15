@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
+import "firebase/compat/messaging";
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyAGOkZVsf7XZsdL6l3wx9j7S0IhiSr9pGc",
