@@ -1,4 +1,4 @@
-import { messaging } from "./src/backend/firebaseconfig";
+import { messaging } from "../src/backend/firebaseconfig";
 
 messaging
   .getToken({
