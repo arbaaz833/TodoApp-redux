@@ -14,4 +14,4 @@ const app = firebase.initializeApp({
 
 export const db = app.firestore();
 export const auth = app.auth();
-// export const firebase = firebase;
+export const messaging = firebase.messaging();
