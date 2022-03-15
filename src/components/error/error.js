@@ -1,13 +1,14 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { clearError } from "../../models/error";
 
 export default function Error() {
   let dispatch = useDispatch();
-  let error = useSelector((state) => state.error);
+  let error = useSelector((state) => state.error.message);
   console.log("error from com", error);
   if (error) {
     setTimeout(() => {
-      dispatch({ type: "ERROR", payload: false });
+      dispatch(clearError());
     }, 4000);
   }
 
@@ -22,7 +23,6 @@ export default function Error() {
             zIndex: 1111,
             textAlign: "left",
             width: "30vw",
-            height: "10vh",
             borderRadius: "10px",
             backgroundColor: "#ff3333",
             fontSize: "1rem",

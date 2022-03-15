@@ -1,6 +1,10 @@
-import { createStore, applyMiddleware } from "redux";
-import { rootReducer } from "./reducer";
-import thunkMiddleware from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import todoReducer from "../models/todos/index.js";
+import errorReducer from "../models/error/index.js";
 
-const enhancer = applyMiddleware(thunkMiddleware);
-export const store = createStore(rootReducer, enhancer);
+export const store = configureStore({
+  reducer: {
+    todoState: todoReducer,
+    error: errorReducer,
+  },
+});

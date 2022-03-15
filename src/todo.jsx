@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../src/components/home/app.module.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { updateTodo, deleteTodo } from "./redux/thunkFunctions";
+import { updateTodo, deleteTodo } from "./models/todos/index";
 
 export default function Todo({ todo, index, id }) {
   let [updatedValue, setValue] = useState("");

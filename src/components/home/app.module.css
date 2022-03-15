@@ -29,6 +29,7 @@ h1 {
   align-items: center;
   justify-content: flex-end;
   padding: 10px 30px;
+  margin-top: 2rem;
 }
 
 .input {
@@ -77,7 +78,7 @@ h1 {
   display: flex;
   align-items: center;
   height: 70vh;
-  padding: 2rem 0px 0px 0px;
+  margin-top: 1.5rem;
   overflow: auto;
   flex-direction: column;
   justify-content: flex-Start;
