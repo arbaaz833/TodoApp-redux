@@ -1,21 +1,22 @@
 // import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { changeVisibility } from "../../redux/action";
+import { changeVisibility } from "../../models/todos/index.js";
 import styles from "./app.module.css";
 import { auth } from "../../backend/firebaseconfig";
 import Todo from "../../todo.jsx";
-import { createTodo, fetchTodos } from "../../redux/thunkFunctions";
+import { createTodo, fetchTodos } from "../../models/todos/index.js";
 import ReactLoading from "react-loading";
 
 function App() {
   const dispatch = useDispatch();
-  const currState = useSelector((state) => state);
+  const currState = useSelector((state) => state.todoState);
+  const status = currState.status;
   const todos = currState.todos;
-  const update = currState.updatingTodo;
-  const del = currState.deletingTodo;
-  const create = currState.creatingTodo;
-  const fetch = currState.fetchingTodos;
+  // const update = currState.updatingTodo;
+  // const del = currState.deletingTodo;
+  // const create = currState.creatingTodo;
+  // const fetch = currState.fetchingTodos;
 
   const visibility = currState.visibility;
   const [ip, setIp] = useState("");
@@ -93,16 +94,7 @@ function App() {
       </div>
 
       <div className={styles.todosCon}>
-        {/* {todos.filter((todo, index) => {
-          if (visibility === "all") {
-            return <Todo todo={todo} index={index} />;
-          } else if (visibility === "completed") {
-            if (todo.completed) return <Todo todo={todo} index={index} />;
-          } else if (visibility === "incomplete") {
-            if (!todo.completed) return <Todo todo={todo} index={index} />;
-          }
-        })} */}
-        {update || del || create || fetch ? (
+        {status === "loading" ? (
           <ReactLoading
             type="bars"
             height="100px"

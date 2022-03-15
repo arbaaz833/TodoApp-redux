@@ -10,7 +10,6 @@ import { useDispatch } from "react-redux";
 export default function Signin() {
   let dispatch = useDispatch();
   let [email, setEmail] = useState("");
-  let [online, setOnline] = useState(true);
   let [password, setPassword] = useState("");
   let [loading, setLoading] = useState(false);
 
